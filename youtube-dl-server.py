@@ -85,8 +85,6 @@ def get_ydl_options(request_options):
             'key': 'FFmpegExtractAudio',
             'preferredcodec': ydl_vars['YDL_EXTRACT_AUDIO_FORMAT'],
             'preferredquality': ydl_vars['YDL_EXTRACT_AUDIO_QUALITY'],
-            'key': 'EmbedThumbnail',
-            'key': 'FFmpegMetadata',
         })
         postprocessors.append({
             'key': 'EmbedThumbnail',

@@ -98,8 +98,9 @@ def get_ydl_options(request_options):
 
     return {
         'format': ydl_vars['YDL_FORMAT'],
+        'no-overwrites': True,
         'writethumbnail': True,
-        'write-json': True,
+        'write-description': True,
         'write-info-json': True,
         'postprocessors': postprocessors,
         'outtmpl': ydl_vars['YDL_OUTPUT_TEMPLATE'],

@@ -88,6 +88,12 @@ def get_ydl_options(request_options):
             'key': 'EmbedThumbnail',
             'key': 'FFmpegMetadata',
         })
+        postprocessors.append({
+            'key': 'EmbedThumbnail',
+        })  
+        postprocessors.append({
+            'key': 'FFmpegMetadata',
+        }) 
 
     if(ydl_vars['YDL_RECODE_VIDEO_FORMAT']):
         postprocessors.append({

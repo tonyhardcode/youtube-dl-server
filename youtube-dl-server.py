@@ -86,6 +86,10 @@ def get_ydl_options(request_options):
             'preferredcodec': ydl_vars['YDL_EXTRACT_AUDIO_FORMAT'],
             'preferredquality': ydl_vars['YDL_EXTRACT_AUDIO_QUALITY'],
         })
+        postprocessors.append({
+            {'key': 'EmbedThumbnail'},
+            {'key': 'FFmpegMetadata'},
+        })        
 
     if(ydl_vars['YDL_RECODE_VIDEO_FORMAT']):
         postprocessors.append({
@@ -97,7 +101,9 @@ def get_ydl_options(request_options):
         'format': ydl_vars['YDL_FORMAT'],
         'postprocessors': postprocessors,
         'outtmpl': ydl_vars['YDL_OUTPUT_TEMPLATE'],
-        'download_archive': ydl_vars['YDL_ARCHIVE_FILE']
+        'download_archive': ydl_vars['YDL_ARCHIVE_FILE'],
+        'writethumbnail': True,
+        'writedescription': True
     }
 
 

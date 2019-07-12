@@ -89,7 +89,7 @@ def get_ydl_options(request_options):
             'key': 'FFmpegMetadata',
         })
 
-        if(ydl_vars['YDL_RECODE_VIDEO_FORMAT']):
+    if(ydl_vars['YDL_RECODE_VIDEO_FORMAT']):
         postprocessors.append({
             'key': 'FFmpegVideoConvertor',
             'preferedformat': ydl_vars['YDL_RECODE_VIDEO_FORMAT'],

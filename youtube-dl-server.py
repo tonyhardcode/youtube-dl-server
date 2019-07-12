@@ -102,7 +102,8 @@ def get_ydl_options(request_options):
         'outtmpl': ydl_vars['YDL_OUTPUT_TEMPLATE'],
         'download_archive': ydl_vars['YDL_ARCHIVE_FILE'],
         'writethumbnail': True,
-        'write-json': True
+        'write-json': True,
+        'write-info-json': True
     }
 
 

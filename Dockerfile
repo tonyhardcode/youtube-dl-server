@@ -22,4 +22,6 @@ EXPOSE 8080
 
 VOLUME ["/youtube-dl"]
 
+RUN touch /youtube-dl/archive.log
+
 CMD [ "python", "-u", "./youtube-dl-server.py" ]

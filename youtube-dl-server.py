@@ -11,9 +11,8 @@ from collections import ChainMap
 
 app = Bottle()
 
-with open("/media/archive.log", "w+") as fh:
-    fh.write(p1)
-os.chmod("/media/archive.log", 0o777)
+open('/media/archive.log', "w+").close()
+os.chmod('/media/archive.log', 0o777)
 
 app_defaults = {
     'YDL_FORMAT': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]',

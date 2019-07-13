@@ -33,6 +33,10 @@ def dl_queue_list():
 def server_static(filename):
     return static_file(filename, root='./static')
 
+@app.route('/data/:filename#.*#')
+def server_static(filename):
+    downloads = os.path.join(current_app.root_path, '/youtube-dl')
+    return send_from_directory(directory=downloads, filename=filename, as_attachment=True)
 
 @app.route('/youtube-dl/q', method='GET')
 def q_size():

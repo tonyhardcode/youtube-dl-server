@@ -33,15 +33,14 @@ def dl_queue_list():
 def server_static(filename):
     return static_file(filename, root='./static')
 
-@app.route('/data/:filename#.*#')
+@app.route('/youtube-dl/media/:filename#.*#')
 def server_static(filename):
-    downloads = os.path.join(current_app.root_path, '/youtube-dl')
-    return send_from_directory(directory=downloads, filename=filename, as_attachment=True)
+    return static_file(filename, root='./media')
+
 
 @app.route('/youtube-dl/q', method='GET')
 def q_size():
     return {"success": True, "size": json.dumps(list(dl_q.queue))}
-
 
 @app.route('/youtube-dl/q', method='POST')
 def q_put():

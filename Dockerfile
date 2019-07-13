@@ -6,10 +6,6 @@
 
 FROM python:alpine
 
-VOLUME ["/youtube-dl"]
-
-RUN touch /youtube-dl/archive.log
-
 RUN apk add --no-cache \
   ffmpeg \
   tzdata
@@ -24,6 +20,6 @@ COPY . /usr/src/app
 
 EXPOSE 8080
 
-
+VOLUME ["/youtube-dl"]
 
 CMD [ "python", "-u", "./youtube-dl-server.py" ]
